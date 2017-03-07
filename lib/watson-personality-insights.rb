@@ -13,3 +13,5 @@ module PersonalityInsights
     end
   end
 end
+
+require_relative "watson-personality-insights/active_method/extra.rb"
