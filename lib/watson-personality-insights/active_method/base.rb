@@ -1,7 +1,7 @@
 module PersonalityInsights
   module ActiveMethod
     class Base < ActiveMethod::Extra
-      include PersonalityInsights::Generators::LanguageRequest
+      include PersonalityInsights::Generator::PersonalityRequest
       attr_accessor :json_result
 
       def initialize

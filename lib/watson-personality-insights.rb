@@ -14,4 +14,6 @@ module PersonalityInsights
   end
 end
 
+require_relative "watson-personality-insights/generator/personality_request.rb"
 require_relative "watson-personality-insights/active_method/extra.rb"
+require_relative "watson-personality-insights/active_method/base.rb"
