@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'WatsonPersonalityInsights/version'
+require 'watson-personality-insights/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "WatsonPersonalityInsights"
-  spec.version       = WatsonPersonalityInsights::VERSION
+  spec.name          = "watson-personality-insights"
+  spec.version       = PersonalityInsights::VERSION
   spec.authors       = ["Diamant"]
   spec.email         = ["diamantkolshi@gmail.com"]
 
