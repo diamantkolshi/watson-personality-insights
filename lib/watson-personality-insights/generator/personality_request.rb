@@ -15,10 +15,7 @@ module PersonalityInsights
         request.basic_auth(@username, @password)
         request.content_type = "application/json"
         request.body = ""
-        require 'pry';binding.pry
-        
         request.body << File.read(@file).delete("\r\n")
-
         response(uri, request)
       end
 
@@ -30,7 +27,6 @@ module PersonalityInsights
         response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
           http.request(request)
         end
-
         response.body
       end
 
