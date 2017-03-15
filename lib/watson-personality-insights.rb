@@ -31,4 +31,3 @@ require_relative "watson-personality-insights/profile.rb"
 #     consumption_preferences: true,
 #     raw_scores: true
 #   )
-# puts obj.result
