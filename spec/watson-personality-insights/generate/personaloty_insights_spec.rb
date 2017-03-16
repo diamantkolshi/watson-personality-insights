@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe PersonalityInsights::Generator::PersonalityRequest do
-  include PersonalityInsights
+  include PersonalityInsights::MockRequest
+  include PersonalityInsights  
   include described_class
   subject(:personality) { described_class }
 
