@@ -1,8 +1,8 @@
 # watson-personality-insights
 
-Personality Insights translates text from one language to another. The service offers multiple domain-specific models that you can customize based on your unique terminology and language. Use Language Translator to take news from across the globe and present it in your language, communicate with your customers in their own language, and more.
+The IBM Watson™ Personality Insights service provides an Application Programming Interface (API) that enables applications to derive insights from social media, enterprise data, or other digital communications. The service uses linguistic analytics to infer individuals' intrinsic personality characteristics, including Big Five, Needs, and Values, from digital communications such as email, text messages, tweets, and forum posts.
 
-For more informations you can read [here](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)
+For more informations you can read [here](https://www.ibm.com/watson/developercloud/doc/personality-insights/)
 
 ## Prerequisites
 
