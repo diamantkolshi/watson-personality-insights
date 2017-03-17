@@ -11,11 +11,11 @@ module PersonalityInsights
     end
 
     def username
-      "4bdf89cf-d763-4309-bb43-5f45422a37c8"
+      ENV['personality_insights_username']
     end
 
     def password
-      "zJhqNq8P74wW"
+      ENV['personality_insights_password']
     end
   end
 end
@@ -24,10 +24,3 @@ require_relative "watson-personality-insights/generator/personality_request.rb"
 require_relative "watson-personality-insights/active_method/extra.rb"
 require_relative "watson-personality-insights/active_method/base.rb"
 require_relative "watson-personality-insights/profile.rb"
-
-# obj = PersonalityInsights::Profile.new("../profile.json")
-# obj.get_profile( 
-#     version: '2016-10-20',
-#     consumption_preferences: true,
-#     raw_scores: true
-#   )
