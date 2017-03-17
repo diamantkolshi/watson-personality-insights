@@ -29,14 +29,14 @@ You can install this library
 and use
 
 ```ruby
-	require 'watson-personality-insights'
+require 'watson-personality-insights'
 ```
 
 ## Getting Started in Rails
 PersonalityInsights works with Rails > 4.1 onwards. You can add it to your Gemfile with:
 
 ```ruby
-	gem 'watson-personality-insights'
+gem 'watson-personality-insights'
 ```
 
 Then run `bundle install`
@@ -47,14 +47,14 @@ Then run `bundle install`
 
 Generates a personality profile for the author of the input text. The service accepts a maximum of 20 MB of input content. It can analyze text in Arabic, English, Japanese, or Spanish and return its results in a variety of languages. You can provide plain text, HTML, or JSON input. The service returns output in JSON format by default, but you can request the output in CSV format.
 
-  ```ruby
-	  @watson_personality = PersonalityInsights::Profile.new(json_file_url)
-		@watson_personality.get_profile( 
-	  	version: '2016-10-20',
-	  	consumption_preferences: true,
-	  	raw_scores: true
-   	)
- ```
+```ruby
+@watson_personality = PersonalityInsights::Profile.new(json_file_url)
+@watson_personality.get_profile( 
+	version: '2016-10-20',
+	consumption_preferences: true,
+  raw_scores: true
+)
+```
  
 ## License
 
