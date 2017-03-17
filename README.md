@@ -1,41 +1,61 @@
-# WatsonPersonalityInsights
+# watson-personality-insights
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/watson-personality-insights`. To experiment with that code, run `bin/console` for an interactive prompt.
+Personality Insights translates text from one language to another. The service offers multiple domain-specific models that you can customize based on your unique terminology and language. Use Language Translator to take news from across the globe and present it in your language, communicate with your customers in their own language, and more.
 
-TODO: Delete this and the text above, and describe your gem
+For more informations you can read [here](https://www.ibm.com/watson/developercloud/doc/language-translator/index.html)
 
-## Installation
+## Prerequisites
 
-Add this line to your application's Gemfile:
+To get an API username and password, you'll need to [sign up for IBM Bluemix](https://console.ng.bluemix.net/registration/).
+
+After creating an instance of the Personality Insights service, select Service Credentials from the navigation on the left side of its dashboard page to see the username and password that are associated with the instance. For more information, see [Obtaining credentials for Watson services](https://www.ibm.com/watson/developercloud/doc/common/getting-started-credentials.html).
+
+After create bluemix account and create username and passowrd credencials, you can use another gem for env variables as ([dotenv](https://github.com/bkeepers/dotenv), [figaro](https://github.com/laserlemon/figaro) or which you want to create env variables).
+
+Then in (.env) file you should add:
 
 ```ruby
-gem 'watson-personality-insights'
+personality_insights_username=$your_username_from_bluemix
+personality_insights_username=$your_password_from_bluemix
 ```
 
-And then execute:
+watson_langauge_translator will take your username and password and it will do request with this credencials, it's it!
 
-    $ bundle
+## Getting Started in ruby
+You can install this library
 
-Or install it yourself as:
+`gem install 'watson-personality-insights'`
 
-    $ gem install watson-personality-insights
+and use
 
-## Usage
+```ruby
+	require 'watson-personality-insights'
+```
 
-TODO: Write usage instructions here
+## Getting Started in Rails
+PersonalityInsights works with Rails > 4.1 onwards. You can add it to your Gemfile with:
 
-## Development
+```ruby
+	gem 'watson-personality-insights'
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Then run `bundle install`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Use
 
-## Contributing
+#### Profile
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/WatsonPersonalityInsights.
+Generates a personality profile for the author of the input text. The service accepts a maximum of 20 MB of input content. It can analyze text in Arabic, English, Japanese, or Spanish and return its results in a variety of languages. You can provide plain text, HTML, or JSON input. The service returns output in JSON format by default, but you can request the output in CSV format.
 
-
+  ```ruby
+	  @watson_personality = PersonalityInsights::Profile.new(json_file_url)
+		@watson_personality.get_profile( 
+	  	version: '2016-10-20',
+	  	consumption_preferences: true,
+	  	raw_scores: true
+   	)
+ ```
+ 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+This project is licensed under the MIT License
