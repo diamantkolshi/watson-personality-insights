@@ -14,6 +14,10 @@ module PersonalityInsights
         request = Net::HTTP::Post.new(uri)
         request.basic_auth(@username, @password)
         request.content_type = "application/json"
+        require 'pry';binding.pry
+        request["Content-Language"] = options[:content_language] unless options[:content_language].nil?
+        request["Accept"] = options[:accept] unless options[:accept].nil?
+        request["Accept-Language"] = options[:accept_language] unless options[:accept_language].nil?
         request.body = ""
         request.body << File.read(@file).delete("\r\n")
         response(uri, request)
