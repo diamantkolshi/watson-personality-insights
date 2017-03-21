@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe PersonalityInsights::Generator::PersonalityRequest do
   include PersonalityInsights::MockRequest
-  include PersonalityInsights  
+  include PersonalityInsights
   include described_class
   subject(:personality) { described_class }
 
@@ -15,6 +15,7 @@ describe PersonalityInsights::Generator::PersonalityRequest do
   describe "request methods" do
     before(:each) do
       create_fake_http_request(full_path, json_response('get_profile.json'), type: type)
+      @options = {content_language: nil, content_language: nil}
     end
 
     describe "create http request with path" do
@@ -26,7 +27,7 @@ describe PersonalityInsights::Generator::PersonalityRequest do
 
     describe "#json_parser" do
       let(:type) { :api }
-      it "return json file to convert to json ruby valid" do                
+      it "return json file to convert to json ruby valid" do
         expect(json_parser(endpoint_path)).to eq(json_response('get_profile.json', json_parse: true))
       end
     end

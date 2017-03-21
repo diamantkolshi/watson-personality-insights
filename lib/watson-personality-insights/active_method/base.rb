@@ -2,7 +2,7 @@ module PersonalityInsights
   module ActiveMethod
     class Base < ActiveMethod::Extra
       include PersonalityInsights::Generator::PersonalityRequest
-      attr_accessor :username, :password, :json_result, :options, :file
+      attr_accessor :username, :password, :json_result, :options, :file, :content_language, :accept, :accept_language
 
       def initialize(file)
         @file = file
