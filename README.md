@@ -50,9 +50,12 @@ Generates a personality profile for the author of the input text. The service ac
 ```ruby
 @watson_personality = PersonalityInsights::Profile.new(json_file_url)
 @watson_personality.get_profile( 
-	version: '2016-10-20',
-	consumption_preferences: true,
-  raw_scores: true
+  version: '2016-10-20',
+  consumption_preferences: true,
+  raw_scores: true,
+  content_language: "en", # {OPTIONAL} [ar, en (default), es, ja]
+  accept: "application/json", # {OPTIONAL} [application/json (default), text/csv]
+  accept_language: "es" # {OPTIONAL} [ar, de, en (the default), es, fr, it, ja, ko, pt-br (Brazilian Portuguese), zh-cn (Simplified Chinese), zh-tw (Traditional Chinese)
 )
 ```
  
